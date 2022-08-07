@@ -5,7 +5,7 @@
 
 deploy_server() {
     echo "deploying server..."
-    curl 'https://cdn.jsdelivr.net/gh/marsbasex/tunnel/frps' -o /usr/bin/frps
+    curl 'https://ghproxy.com/https://raw.githubusercontent.com/marsbasex/tunnel/master/frps' -o /usr/bin/frps
     chmod a+x /usr/bin/frps
     cat > /usr/lib/systemd/system/frps.service <<EOF
 [Unit]
@@ -34,7 +34,7 @@ deploy_client() {
     echo "deploying client..."
     server_ip=$1
     echo "server ip: $server_ip"
-    curl 'https://cdn.jsdelivr.net/gh/marsbasex/tunnel/frpc' -o /usr/bin/frpc
+    curl 'https://ghproxy.com/https://raw.githubusercontent.com/marsbasex/tunnel/master/frpc' -o /usr/bin/frpc
     chmod a+x /usr/bin/frpc
     cat > /usr/lib/systemd/system/frpc.service <<EOF
 [Unit]
